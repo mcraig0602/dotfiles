@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+if command -v docker &> /dev/null
+then
+	alias m4b-tool='docker run -it --rm -u $(id -u):$(id -g) -v "$(pwd)":/mnt sandreas/m4b-tool:latest'
+fi
+
+alias refresh="source ~/.bash_profile"
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
